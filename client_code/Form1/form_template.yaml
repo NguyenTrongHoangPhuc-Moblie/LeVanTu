@@ -1,13 +1,55 @@
 is_package: true
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  properties: {html: '@theme:standard-page.html', visible: true}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
-  components: []
+  components:
+  - name: label_1
+    properties: {text: Nhập vào n số nguyên}
+    type: Label
+    layout_properties: {grid_position: 'XUBHWM,MPWRFQ'}
+  - name: txtNhapN
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'ECHTAQ,NLOJUH'}
+  - name: label_3
+    properties: {text: Hãy chọn một trong thuật toán sắp xếp sau đây}
+    type: Label
+    layout_properties: {grid_position: 'DEWHEU,WKJMBU'}
+  - name: rbSelectionSort
+    properties: {text: Selection Sort}
+    type: RadioButton
+    layout_properties: {grid_position: 'VNZDVH,MIEGQD'}
+  - name: rbInsertionSort
+    properties: {text: Insertion Sort, selected: false, visible: true, enabled: true,
+      spacing_above: small}
+    type: RadioButton
+    layout_properties: {grid_position: 'IROYOH,MSUIOG', full_width_row: false}
+  - name: rbBubbleSort
+    properties: {text: Bubble Sort}
+    type: RadioButton
+    layout_properties: {grid_position: 'SXJAQG,GSFCCD'}
+  - name: rbMergeSort
+    properties: {text: Merge Sort}
+    type: RadioButton
+    layout_properties: {grid_position: 'JNMRCY,RSBBBX'}
+  - name: btnSapXep
+    properties: {text: Sắp xếp, bold: true}
+    type: Button
+    layout_properties: {grid_position: 'OWGYFW,ZFYCSE'}
+    event_bindings: {click: btnSapXep_click}
+  - name: label_2
+    properties: {text: Kết quả sắp xếp}
+    type: Label
+    layout_properties: {grid_position: 'QKNFJS,IOMHQB'}
+  - name: txtKetQua
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'ZBVABH,AUPVYS'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
